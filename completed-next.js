@@ -11,7 +11,7 @@ const completedOpenHistoryBase=openHistoryCourse;openHistoryCourse=function(code
 function openCompletedRecord(code=''){openHistoryCourse(code);completedRecordMode=true;const record=completedRecordList().find(r=>r.code===code);if(record){$('history-title').value=record.title;$('history-credits').value=record.cr??0}$('history-semester').hidden=true;const label=document.querySelector('label[for="history-semester"]');if(label)label.hidden=true;$('history-state').value='completed'}
 const completedSaveHistoryBase=saveHistoryCourse;saveHistoryCourse=function(){if(!completedRecordMode)return completedSaveHistoryBase();const code=$('history-code').value.trim().toUpperCase().replace(/^([A-Z]{2,4})\s*(\d{3}[A-Z]?)$/,'$1 $2'),title=$('history-title').value.trim(),cr=Number($('history-credits').value),state=$('history-state').value;if(!/^[A-Z]{2,4} \d{3}[A-Z]?$/.test(code)||!title||!Number.isFinite(cr)||cr<0||cr>30||historyEditingCode&&historyEditingCode!==code){$('history-error').textContent='Check the course code, name, and credit hours.';return}let c=s.courses.find(c=>c.code===code);if(!c){c=mk(code,title,cr,'pool');s.courses.push(c)}Object.assign(c,{title,cr,term:'pool',days:'',start:'',end:''});s.completed=s.completed.filter(x=>x!==code);s.inProgress=(s.inProgress||[]).filter(x=>x!==code);(state==='completed'?s.completed:s.inProgress).push(code);const r=s.auditParse?.courses.find(r=>r.code===code);if(r)Object.assign(r,{status:state,title,credits:cr});s.showPreviousSemesters=true;$('history-dialog').close();persist()};
 const nextChooseBase=triChooseTerm;triChooseTerm=function(code,key,season){if(workflowTab!=='next')return nextChooseBase(code,key,season);const t=nextPlanningTerm();if(!t)return;return triPlace({code,key:decodeURIComponent(key)},t.id)};
-const nextPlaceBase=triPlace;triPlace=function(payload,term){if(term==='completed'&&workflowTab==='path'){triDragging=false;return dropCompletedCourse(payload)}if(!nextOnlyTarget(term))return nextOnlyNotice();if(workflowTab==='next'){const existing=payload.id?s.courses.find(c=>c.id===payload.id):s.courses.find(c=>c.code===payload.code&&index(c.term)>=0);if(existing&&existing.term!==nextPlanningTerm()?.id)return nextOnlyNotice()}return nextPlaceBase(payload,term)};
+const nextPlaceBase=triPlace;triPlace=function(payload,term){if(payload.completedCode)return moveCompletedToSemester(payload.completedCode,term);if(term==='completed'&&workflowTab==='path'){triDragging=false;return dropCompletedCourse(payload)}if(!nextOnlyTarget(term))return nextOnlyNotice();if(workflowTab==='next'){const existing=payload.id?s.courses.find(c=>c.id===payload.id):s.courses.find(c=>c.code===payload.code&&index(c.term)>=0);if(existing&&existing.term!==nextPlanningTerm()?.id)return nextOnlyNotice()}return nextPlaceBase(payload,term)};
 function dropCompletedCourse(payload){
  const planned=payload.id?s.courses.find(c=>c.id===payload.id):null;
  const choice=payload.code?triCourseCatalog().find(c=>c.code===payload.code):null;
@@ -38,3 +38,34 @@ function dropCompletedCourse(payload){
  return true;
 }
 const nextFourBase=fourChoicesHTML;fourChoicesHTML=function(){const html=nextFourBase();return workflowTab==='next'?html.replace('Drag a course into a semester or the Completed column.','Drag a course into '+esc(nextPlanningTerm()?.name||'next semester')+'.'):html};
+
+const completedBindBoardBase=triBindBoard;
+triBindBoard=function(){
+ completedBindBoardBase();
+ document.querySelectorAll('[data-tri-completed]').forEach(el=>{
+  el.onpointerdown=ev=>ev.stopPropagation();
+  el.ondragstart=ev=>{
+   ev.dataTransfer.setData('text/plain','tri:'+JSON.stringify({completedCode:el.dataset.triCompleted}));
+   ev.dataTransfer.effectAllowed='move';
+  };
+  el.ondragend=()=>document.querySelectorAll('.tri-over').forEach(node=>node.classList.remove('tri-over'));
+ });
+};
+function moveCompletedToSemester(code,term){
+ if(workflowTab!=='path'||!s.terms.some(t=>t.id===term))return false;
+ const record=completedRecordList().find(row=>row.code===code);
+ if(!record)return false;
+ let course=s.courses.find(row=>row.code===code);
+ if(!course){
+  const ref=CATALOG[code];
+  course={...mk(code,record.title,record.cr??ref?.cr??0,'pool',ref?.pre||''),co:ref?.co||'',note:ref?.note||''};
+  s.courses.push(course);
+ }
+ s.completed=s.completed.filter(value=>value!==code);
+ for(const row of s.auditParse?.courses||[]){
+  if(row.code===code&&row.status==='completed')row.status='needed';
+ }
+ move(course.id,term);
+ triFeedback(code+' moved from Completed to the plan.');
+ return true;
+}
