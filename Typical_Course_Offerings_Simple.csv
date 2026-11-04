@@ -1,0 +1,429 @@
+﻿Course Code,Course Title,Credit Hours,Fall,Spring,Summer
+ACC 201,Princ of Accounting I,3,Yes,No,No
+ACC 202,Princ of Accounting II,3,No,Yes,No
+ACC 301,Intermediate Accounting I,3,Yes,No,No
+ACC 302,Intermediate Accounting II,3,No,Yes,No
+ACC 331,Management Cost Analysis,3,No,Yes,No
+ACC 351,Federal Income Tax,3,Yes,No,No
+ACC 381,Information Systems,3,Yes,Yes,Yes
+ACC 401,Adv Financial Accounting,3,Yes,No,No
+ACC 481,Auditing,3,No,Yes,No
+ACC 496,Accounting Internship,1; 2; 3,Yes,Yes,Yes
+AFS 202,Evolution of USAF Air/Space II,1,No,Yes,No
+ARH 100,Art Appreciation,3,Yes,Yes,No
+ARH 299,Art Today,3,No,No,Yes
+ARH 311,Renaissance to Modern Art,3,No,Yes,No
+ARH 312,Modern to Contemporary Art,3,No,Yes,No
+ARH 315,History of Graphic Design,3,Yes,No,No
+ART 101,Foundations of Art,3,Yes,Yes,No
+ART 102,Introduction to Drawing,3,Yes,Yes,No
+ART 103,Ceramics I,3,Yes,Yes,No
+ART 202,Drawing II,3,No,Yes,No
+ART 207,Printmaking I,3,No,Yes,No
+ART 208,Intro to Digital Design,3,Yes,Yes,No
+ART 220,Graphic Design I,3,Yes,No,No
+ART 230,Color Theory,3,No,Yes,No
+ART 253,Intro to Digital Video Prod,3,No,Yes,No
+ART 254,Intro to Photography,3,Yes,Yes,Yes
+ART 301,Advanced Drawing,3,Yes,No,No
+ART 303,Ceramics II,3,Yes,Yes,No
+ART 320,Graphic Design II,3,Yes,No,No
+ART 338,Advanced Photography,3,No,Yes,No
+ART 341,Typography II,3,No,Yes,No
+ART 371,Ux/Ui Design,3,Yes,No,No
+ART 435,Motion Graphics,3,No,Yes,No
+ART 490,Visual Arts Internship,3,Yes,Yes,Yes
+ART 491,Graphic Design Senior Seminar,3,No,Yes,No
+ART 494,Senior Studio II,3,No,Yes,No
+ART 496,Studio Senior Seminar II,2,No,Yes,No
+BAN 363,Essentials of Business Analytics,3,No,Yes,No
+BIO 100,Human Biology,3,No,No,Yes
+BIO 101,Principles of Biology,3,Yes,No,Yes
+BIO 102,Botany,3,No,Yes,No
+BIO 103,Principles of Biology Lab,1,Yes,No,No
+BIO 104,Botany Lab,1,No,Yes,No
+BIO 117,Forensic Biology,3,No,Yes,No
+BIO 120,Farms to Pharmaceuticals,3,Yes,No,Yes
+BIO 125,Pandemics,3,Yes,No,No
+BIO 140,STEM Community Service Seminar,1,Yes,Yes,No
+BIO 200,One Health,3,No,Yes,No
+BIO 202,Pre-Health Shadowing I,1,No,Yes,No
+BIO 203,Pre-Health Shadowing II,1,No,Yes,No
+BIO 205,Invertebrate Zoology,3,Yes,No,No
+BIO 207,Invertebrate Zoology Lab,1,Yes,No,No
+BIO 220,Biology of Women,3,Yes,No,No
+BIO 225,Foundations of Epidemiology,3,No,Yes,No
+BIO 236,Microbial Biology,3,No,Yes,No
+BIO 238,Microbial Biology Lab,1,No,Yes,No
+BIO 240,Biomedical Anat & Phys I,3,Yes,No,Yes
+BIO 241,Biomedical Anat & Phys II,3,No,Yes,Yes
+BIO 243,Biomedical Anat & Phys Lab I,1,Yes,No,Yes
+BIO 244,Biomedical Anat & Phys Lab II,1,No,Yes,Yes
+BIO 254,Vertebrate Zoology,2,No,Yes,No
+BIO 256,Vertebrate Zoology Lab,2,No,Yes,No
+BIO 301,Genetics,3,Yes,No,No
+BIO 302,Genetics Lab,1,Yes,No,No
+BIO 310,Animal Behavior,3,Yes,No,No
+BIO 322,Developmental Biology,3,Yes,No,No
+BIO 324,Developmental Biology Lab,1,Yes,No,No
+BIO 330,Entomology,3,Yes,No,No
+BIO 331,Entomology Laboratory,1,Yes,No,No
+BIO 351,Parasitology,3,No,Yes,No
+BIO 353,Parasitology Lab,1,No,Yes,No
+BIO 355,Ecology,2,No,Yes,No
+BIO 357,Ecology Lab,2,No,Yes,No
+BIO 360,Cell Biology,3,No,Yes,No
+BIO 362,Cell and Molecular Biology Lab,1,No,Yes,No
+BIO 410,Immunology,3,Yes,No,No
+BIO 412,Emerging Pathogens,3,No,Yes,No
+BIO 421,Histology,2,No,Yes,No
+BIO 423,Histology Lab,2,No,Yes,No
+BIO 450,Molecular Biology,3,No,Yes,No
+BIO 460,Evolution,3,No,Yes,Yes
+BIO 462,General Physiology,3,Yes,No,No
+BIO 464,General Physiology Lab,1,Yes,No,No
+BIO 470,Mechanisms of Disease,3,No,No,Yes
+BUS 210,Business Communication,3,Yes,Yes,No
+BUS 220,"Business,Society,Sustainability",3,Yes,Yes,No
+BUS 263,Business Statistics,3,Yes,No,Yes
+BUS 264,Management Science,3,No,Yes,Yes
+BUS 301,Business Law I,3,Yes,Yes,No
+BUS 320,International Business,3,No,Yes,No
+BUS 395,Pre-Professional Development,1,No,Yes,No
+BUS 496,Business Internship,1; 2; 3,Yes,Yes,Yes
+BUS 499,Business Strategy and Policy,3,Yes,Yes,No
+CFE 450,Market Definition,3,Yes,No,No
+CFE 455,Enterprise Development,3,No,Yes,No
+CHM 111,General Chemistry I,3,Yes,No,No
+CHM 112,General Chemistry II,3,No,Yes,No
+CHM 113,General Chemistry I Lab,1,Yes,No,No
+CHM 114,General Chemistry II Lab,1,No,Yes,No
+CHM 115,General Chemistry I Recitation,,Yes,No,No
+CHM 231,Organic Chemistry I,3,Yes,No,No
+CHM 232,Organic Chemistry II,3,No,Yes,No
+CHM 233,Organic Chemistry Lab I,1,Yes,No,No
+CHM 234,Organic Chemistry Lab II,1,No,Yes,No
+CHM 302,Instrumental Analysis,3,Yes,No,No
+CHM 304,Instrumental Analysis Lab,2,Yes,No,No
+CHM 311,Food Chemistry,3,No,Yes,No
+CHM 313,Food Chemistry Laboratory,1,No,Yes,No
+CHM 351,Analytical Chemistry,3,No,Yes,No
+CHM 353,Analytical Chemistry Lab,1,No,Yes,No
+CHM 392,Junior Seminar,1,No,Yes,No
+CHM 451,Advanced Inorganic Chemistry,3,No,Yes,No
+CHM 461,Biochemistry I,3,Yes,No,No
+CHM 462,Biochemistry II,3,No,Yes,No
+CHM 464,Biochemistry Lab,1,No,Yes,No
+CHM 492,Senior Seminar,1,No,Yes,No
+CIS 381,Information Systems,3,Yes,Yes,Yes
+CIS 382,Database Management Systems,3,No,Yes,No
+CIS 470,E-Commerce,3,No,Yes,No
+CMM 150,Intro Public Speaking,3,No,No,Yes
+CMM 215,Podcasting,3,Yes,No,No
+CMM 220,Princpl Strategic Communications,3,No,Yes,No
+CMM 234,Media Literacy,3,Yes,Yes,No
+CMM 251,Introduction to Media Writing,3,Yes,No,No
+CMM 252,Intro to Media Production Lab,3,Yes,No,No
+CMM 253,Intro to Digital Video Prod,3,No,Yes,No
+CMM 254,Intro to Photography,3,Yes,Yes,Yes
+CMM 260,Visual Communication,3,Yes,No,No
+CMM 299,Tech Tools: Basic TV Production,1; 3,Yes,Yes,No
+CMM 315,Crisis Communication,3,Yes,No,No
+CMM 321,Multimedia Storytelling,3,No,Yes,No
+CMM 327,History of Film & Television,3,No,Yes,No
+CMM 331,Scriptwriting for Film and TV,3,Yes,No,No
+CMM 338,Advanced Photography,3,No,Yes,No
+CMM 365,Strategic Writing,3,No,Yes,No
+CMM 366,Strategic Planning PR/Advertise,3,Yes,No,No
+CMM 373,Student Media Content,3,Yes,Yes,No
+CMM 429,Adv Digital Video Production,3,Yes,No,No
+CMM 435,Motion Graphics,3,No,Yes,No
+CMM 472,Student Agency,3,Yes,No,No
+CMM 473,Student Media Management,3,Yes,Yes,No
+CMM 490,CMM Arts/Graph Design Internship,1; 2; 3,Yes,Yes,Yes
+CMM 495,Senior Seminar,4,No,Yes,No
+CSC 100,Computer Science: Foundations,4,Yes,No,No
+CSC 101,Computer Science: Principles,4,No,Yes,No
+CSC 202,Computer Science:Data Structures,4,Yes,No,No
+CSC 203,Computer Science: Algorithms,4,No,Yes,No
+CSC 210,Computer Science: Compute Archt.,4,Yes,No,No
+CSC 311,OS: Design and Implementation,4,Yes,No,No
+CSC 312,Database Systems and Theory,3,No,Yes,No
+CSC 320,Automata,3,Yes,No,No
+CSC 321,Programming Language Theory,3,No,Yes,No
+CSC 341,Data Science 1,3,Yes,No,No
+CSC 414,Networking and Network Security,3,No,Yes,No
+CSC 422,Parallel Computing,3,No,Yes,No
+CSC 431,Senior Software Architecture Sem,1,Yes,Yes,No
+DSC 240,Data Visualization,3,Yes,Yes,No
+DSC 442,Data Analysis,3,No,Yes,No
+DSC 443,"AI, Machine Learning, Deep Learning",3,Yes,No,No
+DSC 499,Senior Seminar in AI & Data Science,1,No,Yes,No
+ECO 101,Principles of Macroeconomics,3,Yes,No,Yes
+ECO 102,Principles of Microeconomics,3,No,Yes,Yes
+ECO 301,Managerial Economics,3,Yes,No,No
+EDU 131,Human Development,3,Yes,No,No
+EDU 160,Foundations of Teaching,3,No,Yes,No
+EDU 201,History & Philosophy of Educ,3,No,Yes,Yes
+EDU 230,"Classrm Mgt,Soc-Emotional Lrng",3,Yes,No,Yes
+EDU 250,Math for Elementary Education,3,No,Yes,No
+EDU 260,Prin of Educational Psych.,3,No,Yes,No
+EDU 275,Integrated Arts in Elem Educ,3,Yes,No,No
+EDU 322,Edu Tests & Measurements,3,No,Yes,No
+EDU 325,Teaching Methods: Literacy I,3,Yes,No,No
+EDU 326,Teaching Methods: Literacy II,3,Yes,No,No
+EDU 327,Teaching Methods: Literacy III,3,No,Yes,No
+EDU 328,Teaching Methods: Literacy IV,3,No,Yes,No
+EDU 331,Educational Technology,3,Yes,No,No
+EDU 370,Survey of Exceptionality,3,No,Yes,No
+EDU 374,"Tchng Methods:Soc Sci,Sci,Health",3,Yes,No,No
+EDU 375,Teaching Methods: Mathematics I,3,Yes,No,No
+EDU 376,Teaching Methods: Mathematics II,3,No,Yes,No
+EDU 378,"Fnd Instr,Plan,Lrng Environments",3,Yes,No,No
+EDU 391,Multicultural Teaching,3,No,Yes,No
+EDU 490,Intern in Elementary Education,3,Yes,Yes,No
+EDU 495,Internship in the High School,3,No,Yes,No
+EDU 497,Intern in the High School,9,No,Yes,No
+EDU 499,Intern in Elementary Education,9,Yes,Yes,No
+ENG 105,College Composition,3,Yes,No,No
+ENG 121,Composition I,3,Yes,Yes,No
+ENG 123,Composition II,3,Yes,Yes,Yes
+ENG 190,Honors Composition,3,Yes,No,No
+ENG 240,Intro to Poetry,3,No,Yes,No
+ENG 241,Intro to Fiction,3,No,Yes,No
+ENG 242,Intro to Drama & Theater,3,Yes,Yes,No
+ENG 243,Intro Non-Fiction Prose,3,Yes,No,No
+ENG 276,Intro to Creative Writing,3,Yes,Yes,No
+ENG 285,Romantic Comedies,3,No,No,Yes
+ENG 290,Honors Composition & Literature,3,No,Yes,No
+ENG 300,Critical Approaches to Lit,3,No,Yes,No
+ENG 318,American Literature,3,Yes,No,No
+ENG 320,Revenge Tragedy,3,No,Yes,No
+ENG 485,Shakespeare,3,No,Yes,No
+ENG 495,Nature and the Imagination,3,Yes,Yes,No
+ENG 496,Postcolonial Ecocriticism,3,Yes,No,No
+ENT 101,Foundation in Entrepreneurship,3,No,Yes,No
+ENT 201,Entrepreneurial Markets & Opport,3,Yes,No,No
+EXS 325,Physiology of Exercise,3,No,Yes,No
+EXS 327,Physiology of Exercise Lab,1,No,Yes,No
+EXS 340,Foundations of Conditioning,3,No,Yes,No
+EXS 420,Motor Behavior,2,No,Yes,No
+FIN 301,Financial Management,3,Yes,Yes,Yes
+FIN 321,Money and Capital Markets,3,No,Yes,No
+FIN 410,Investments,3,Yes,No,No
+FRE 101,Elementary French I,3,Yes,No,No
+FRE 102,Elementary French II,3,No,Yes,No
+FRE 105,French Culture,3,No,Yes,No
+HCM 301,Foundations of Health Care Mgt,3,Yes,No,No
+HCM 450,Bus. of Healthcare Strategy/Mgt,3,No,Yes,No
+HIS 110,Global Witch Trials,3,No,Yes,No
+HIS 120,Black Lives in Early America,3,No,Yes,No
+HIS 212,Western Civilization Since 1648,3,No,Yes,No
+HIS 213,America to 1876,3,Yes,No,No
+HIS 214,The United States Since 1876,3,No,No,Yes
+HIS 327,History of Film and TV,3,No,Yes,No
+HIS 343,The Age of Jefferson & Jackson,3,No,Yes,No
+HIS 344,Civil War and Reconstruction,3,Yes,No,No
+HIS 495,Seminar Topic,3,Yes,No,No
+HIS 497,History of Food,3,No,Yes,No
+HIS 499,Seminar,3,No,Yes,No
+HON 490,Honors Senior Seminar,,No,Yes,No
+HON 499,Engaging Global Problems,3,No,Yes,No
+HSC 131,Human Anatomy&Phys I Recitation,,Yes,No,No
+HSC 136,Medical Microbiology,3,No,Yes,No
+HSC 138,Medical Microbiology Lab,1,No,Yes,No
+HSC 165,Emergency Medical Responder,1,Yes,Yes,No
+HSC 201,Normal and Theraputic Nutrition,2,Yes,No,Yes
+HSC 204,Developmental Psychology,3,Yes,No,Yes
+HSC 205,Health Science Shadowing,1,Yes,No,No
+HSC 225,Psychopathology,3,No,Yes,Yes
+HSC 231,Anatomy & Physiology I,3,Yes,No,Yes
+HSC 232,Anatomy & Physiology II,3,No,Yes,Yes
+HSC 233,Anatomy & Physiology Lab I,1,Yes,No,Yes
+HSC 234,Anatomy & Phys. Lab II,1,No,Yes,Yes
+HSC 256,Cultural Anthropology,3,No,Yes,Yes
+HSC 391,Medical Sociology,3,No,No,Yes
+HSC 420,Community as Client,3,No,Yes,No
+IDS 496,Interdisc Synthesis Project,3,No,No,Yes
+ITA 101,Elementary Italian I,3,Yes,No,No
+ITA 102,Elementary Italian II,3,No,Yes,No
+ITA 105,Italian Culture,3,No,Yes,No
+MGT 301,Management Principles,3,Yes,Yes,No
+MGT 320,Organizationl Theory & Behavior,3,Yes,Yes,No
+MGT 330,Industrial/Organizational Psych,3,No,No,Yes
+MGT 351,Entrepreneurship/Sm Busns Mgmt,3,Yes,No,No
+MGT 495,Social Entrepreneurship,3,No,Yes,No
+MKT 220,Integrated Marketing Comm.,3,No,Yes,No
+MKT 311,Marketing Principles,3,Yes,Yes,Yes
+MKT 365,Strategic Writing,3,No,Yes,No
+MKT 422,Marketing Research,3,Yes,No,No
+MKT 472,Student Agency,3,Yes,No,No
+MKT 475,Digital Marketing Certifications,3,No,Yes,No
+MTH 100,Intermediate Algebra,3,Yes,Yes,No
+MTH 101,Intermediate Algebra Recitation,,Yes,Yes,No
+MTH 103,Contemporary Mathematics,3,Yes,Yes,No
+MTH 104,Social Justice Mathematics,3,No,Yes,Yes
+MTH 111,Pre-Calculus,3,Yes,Yes,Yes
+MTH 121,Calculus I,4,Yes,Yes,Yes
+MTH 122,Calculus II,4,No,Yes,No
+MTH 163,Basic Statistics for Sciences,3,Yes,Yes,Yes
+MTH 221,Linear Algebra,3,No,Yes,No
+MTH 223,Calculus III,4,Yes,No,No
+MTH 261,Differential Equations,3,No,Yes,No
+MTH 301,Intro to Abstract Mathematics,3,No,Yes,No
+MTH 322,Discrete Mathematics,3,Yes,No,No
+MTH 365,Probability and Statistics,3,No,Yes,No
+MTH 399,Recitation Assistant,1,Yes,Yes,No
+MTH 423,Cryptography,3,No,Yes,No
+MTH 451,Basic Real Analysis,3,Yes,No,No
+MTH 482,Abstract Algebra,3,No,Yes,No
+MTH 491,Seminar,1,No,Yes,No
+MTH 499,Category Theory,3,No,Yes,No
+NUR 100,Intro Professional Nursg/Health,1,Yes,No,No
+NUR 201,Normal/Therapeutic Nutrition,2,Yes,No,Yes
+NUR 202,Med Math,1,Yes,No,No
+NUR 203,Death and Dying,3,Yes,Yes,No
+NUR 300,Foundations of Nursing Care,3,No,Yes,No
+NUR 301,Health Assessment,2,No,Yes,No
+NUR 302,Pharmacology,3,Yes,No,Yes
+NUR 303,Human Pathophysiology,3,No,Yes,Yes
+NUR 310,Community Mental Health,5,No,Yes,No
+NUR 320,Childbearing Family,5,Yes,No,No
+NUR 330,Adult Health I,5,No,Yes,No
+NUR 340,Community as Client,5,Yes,No,No
+NUR 401,Scientific Inquiry,3,No,Yes,No
+NUR 410,Adult Health II,5,Yes,No,No
+NUR 411,Child & Adolescent Health,5,No,Yes,No
+NUR 430,Leadership & Management,3,No,Yes,No
+NUR 440,Practicum:Hospital,3,No,Yes,No
+NUR 445,Adult Health III,5,Yes,No,No
+NUR 460,Senior Seminar,3,No,Yes,No
+NUR 499,Special Topics,3,No,No,Yes
+PHL 101,Introductory Logic,3,Yes,Yes,Yes
+PHL 190,Honors Logic,3,Yes,No,No
+PHL 210,Ethics,3,Yes,No,No
+PHL 214,Environmental Ethics,3,No,Yes,No
+PHL 220,Philosophy of Human Nature,3,No,Yes,Yes
+PHL 292,Hnrs Philosophy of Human Nature,3,No,Yes,No
+PHL 311,Bioethics,3,No,Yes,No
+PHL 313,Business Ethics,3,Yes,Yes,Yes
+PHL 316,Justice,3,Yes,No,No
+PHL 318,Christian Medical Ethics Nurses,3,Yes,No,No
+PHL 350,Philosophy of Law,3,No,Yes,No
+PHL 351,Western Political Philosophy I,3,Yes,No,No
+PHL 422,Philosophy of Mind,3,No,Yes,No
+PHY 115,Introduction to Astronomy,3,Yes,Yes,No
+PHY 201,Algebra-Based Physics I,3,Yes,No,No
+PHY 202,Algebra-Based Physics II,3,No,Yes,No
+PHY 213,Physics Laboratory I,1,Yes,No,No
+PHY 214,Physics Laboratory II,1,No,Yes,No
+PHY 221,Physics with Calculus I,3,Yes,No,No
+PHY 222,Physics with Calculus II,3,No,Yes,No
+POL 112,Intro to American Politics,3,Yes,Yes,No
+POL 151,Intro to Comparative Politics,3,Yes,No,Yes
+POL 161,Intro to Int'L Relations,3,No,Yes,No
+POL 250,Research Methods Political Science,3,No,Yes,No
+POL 283,American Political Thought,3,No,Yes,No
+POL 326,Politics of Government Efficiency,3,Yes,No,No
+POL 340,Constitutional Law,3,Yes,No,No
+POL 342,Civil Liberties and Civil Rights,3,No,Yes,No
+POL 366,Russia & Eastern Europe,3,No,Yes,No
+POL 379,International Political Economy,3,No,Yes,No
+POL 381,Western Political Philosophy I,3,Yes,No,No
+POL 386,Polit. Ideol. & Public Opinions,3,No,Yes,No
+POL 388,Politics and Film,3,No,No,Yes
+POL 447,Engaging Global Problems,3,No,Yes,No
+POL 491,Seminar: American Govt/Politics,3,Yes,No,No
+PSY 101,Intro to Psychology,3,Yes,Yes,Yes
+PSY 150,Careers in Psychology,1,Yes,No,No
+PSY 204,Developmental Psychology,3,Yes,No,Yes
+PSY 225,Psychopathology,3,No,Yes,Yes
+PSY 250,Research Methods,4,Yes,No,No
+PSY 263,Statistics for Social Sciences,3,Yes,No,Yes
+PSY 264,Social Statistics Laboratory,1,Yes,No,No
+PSY 300,Social Psychology,3,No,Yes,No
+PSY 310,Psychology of Gender,3,No,No,Yes
+PSY 315,Sensation and Perception,3,No,Yes,No
+PSY 324,Health Psychology,3,Yes,No,No
+PSY 330,Industrial/Organizational Psych,3,No,Yes,Yes
+PSY 333,Positive Psychology,3,No,Yes,No
+PSY 364,Biological Psychology,3,Yes,No,No
+PSY 374,"Drugs, Brain & Behavior",3,No,Yes,Yes
+PSY 375,Cognitive Psychology,3,No,Yes,No
+PSY 380,Learning and Behavior,3,Yes,No,No
+PSY 420,Personality Theories,3,No,Yes,No
+PSY 422,Tests and Measures,3,No,Yes,No
+PSY 428,Forensic Psychology,3,Yes,No,No
+PSY 445,Approaches Psychothpy/Counseling,3,No,Yes,No
+PSY 446,Field Experience,1; 2; 3,Yes,Yes,Yes
+PSY 499,Capstone in Psychology,3,Yes,No,No
+PTH 101,Community and Well-Being,1,Yes,No,No
+PTH 102,Engagement and Outreach,1,No,Yes,No
+PTH 205,Pre-Professional Development,1,No,Yes,No
+PTH 411,Peer Mentoring,1,No,Yes,No
+PTH 413,Peer Mentoring II,1,No,Yes,No
+SCM 301,Principles of Logistics and Scm,3,Yes,No,No
+SCM 410,Transportation Management,3,Yes,No,No
+SCM 420,Warehousing and Inventory Mgmt,3,No,Yes,No
+SOC 101,Intro to Sociology,3,Yes,Yes,No
+SOC 250,Social Problems,3,No,Yes,No
+SOC 253,Criminology,3,Yes,No,No
+SOC 256,Cultural Anthropology,3,No,Yes,Yes
+SOC 275,Intro American Justice Systems,3,No,Yes,No
+SOC 299,Special Topics: Corrections,3; 6,Yes,Yes,No
+SOC 301,Social Determinants of Health,3,No,Yes,No
+SOC 345,Sociological Theory,3,Yes,No,No
+SOC 354,Juvenile Delinquency,3,Yes,No,No
+SOC 375,Gender and Society,3,No,Yes,No
+SOC 385,Sociology of Sport/Leisure,3,Yes,No,No
+SOC 391,Medical Sociology,3,No,No,Yes
+SOC 480,Senior Experience in Sociology,3,No,Yes,No
+SOC 483,Sociology of Law,3,Yes,No,No
+SOC 499,Global Terrorism & Int'L Crime,3,No,Yes,No
+SPA 101,Elementary Spanish I,3,Yes,Yes,Yes
+SPA 102,Elementary Spanish II,3,No,Yes,Yes
+SPA 107,Span for Medical Personnel I,3,Yes,No,Yes
+SPA 108,Spanish for Medical Personnel II,3,No,Yes,Yes
+SPA 201,Intermed Spanish I,3,Yes,Yes,No
+SPA 202,Intermed Spanish II,3,No,Yes,No
+SPA 304,Intro to Hispanic Lit and Film,3,Yes,No,No
+SPA 381,Hispanic Fiction,3,No,Yes,No
+SPM 401,Sports Law,3,Yes,No,No
+SPM 410,Sports Facilities Management,3,Yes,No,No
+SPM 420,Sports Marketing and Promotion,3,No,Yes,No
+SPT 436,Spirituality of the Psalms,3,No,No,Yes
+SPT 443,St. John of the Cross,1,No,No,Yes
+SPT 465,Antiqua Et Nova: Human Person,3,No,No,Yes
+SPT 492,Spirituality and Psych Seminar,3,No,Yes,No
+SPT 499,Spiritual Direction Practicum II,2,No,Yes,No
+THL 101,Intro to Christian Theology,3,Yes,Yes,Yes
+THL 190,Honors Intro Christian Theology,3,No,Yes,No
+THL 232,Synoptic Gospels,3,No,Yes,No
+THL 242,Catholicism,3,Yes,Yes,No
+THL 250,The Good Life: Christian Ethics,3,Yes,Yes,Yes
+THL 261,World Religions,3,Yes,Yes,No
+THL 332,Gospel and Letters John,3,No,Yes,No
+THL 333,Letters of Paul,3,No,Yes,No
+THL 350,Catholic Social Thought,3,No,Yes,No
+THL 352,Christian Ethics:War and Peace,3,No,Yes,No
+THL 353,Human Sexuality & Marriage,3,No,Yes,No
+THL 354,Religion and Int'L Politics,3,Yes,Yes,No
+THL 365,Judaism,3,Yes,No,No
+THL 367,The Way of Zen,3,Yes,Yes,No
+THL 388,Engaging Global Problems,3,Yes,Yes,No
+THL 390,Honors Engaging Global Problms,3,Yes,Yes,No
+THL 425,Spec Top in Pastoral Theology,3,No,Yes,Yes
+THL 430,Introduction to Biblical Studies,3,Yes,No,No
+THL 455,St. John of the Cross,3,No,No,Yes
+THL 495,Adv Engaging Global Problems,3,Yes,Yes,No
+THL 496,Senior Seminar,3,Yes,No,No
+THR 245,Theatre Production I,3,No,Yes,No
+THR 246,Theatre Production II,3,No,Yes,No
+THR 250,Acting I,3,Yes,Yes,No
+WRI 251,Intro to Media Writing,3,Yes,No,No
+WRI 302,Creative Writing: Poetry,3,No,Yes,No
+WRI 310,Intro to Profess./Tech. Writing,3,No,Yes,No
+WRI 331,Scriptwriting for Film & TV,3,Yes,No,No
+WRI 350,Writing with Research and Data,3,No,Yes,No
+WRI 495,Nature and the Imagination,3,Yes,Yes,No
+WRI 498,Senior Seminar,3,No,Yes,No
