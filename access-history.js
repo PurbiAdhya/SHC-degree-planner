@@ -1,29 +1,10 @@
-/* Browser-local adviser sign-in, roster, and academic-year planning. */
-let loggedAdvisor=null;
-function adviserLogin(event){
- event?.preventDefault();
- const id=$('login-user').value;
- if(!Object.hasOwn(ADVISOR_NAMES,id))return;
- loggedAdvisor=id;
- switchAdvisor(id);
- document.body.classList.remove('logged-out');
- workflowGo('path');
-}
-function adviserLogout(){
- saveActiveStudent();
- loggedAdvisor=null;
- triClosePopover();
- $('adviser-menu').hidden=true;
- document.body.classList.add('logged-out');
- $('login-user').focus();
-}
+/* Browser-local adviser roster and academic-year planning. */
 function toggleAdviserMenu(){const m=$('adviser-menu');m.hidden=!m.hidden;$('adviser-menu-button').setAttribute('aria-expanded',String(!m.hidden))}
-function adviserAddStudent(){if(!loggedAdvisor)return;$('adviser-menu').hidden=true;saveActiveStudent();const a=activeAdvisor(),id=uid();a.activeStudentId=id;s=blankStudentPlan();a.students[id]=copyPlan(s);resetStudentUI();workflowGo('setup');saveActiveStudent()}
-function adviserRoster(){if(!loggedAdvisor)return;$('adviser-menu').hidden=true;workflowTab='roster';triClosePopover();render()}
-function adviserRosterHTML(){const a=activeAdvisor(),students=Object.entries(a.students).filter(([,p])=>p.student!=='New student'||p.auditParse||p.courses.length);return `<section class="flow-page roster-page"><div class="flow-title"><div><h2>Adviser roster</h2><p>${esc(a.name)}</p></div><button onclick="adviserAddStudent()">+ Add student</button></div><div class="roster-list">${students.map(([id,p])=>`<div class="roster-entry"><button onclick="adviserOpenStudent('${id}')"><b>${esc(p.student)}</b><span>${esc((p.programDeclarations||[]).map(d=>d.name).join(' · ')||(p.programs||[]).map(k=>PROGRAMS[k]?.name||k).join(' · '))}</span><small>${esc(p.graduation||'')} ›</small></button><button class="roster-remove" onclick="adviserRemoveStudent('${id}')" aria-label="Remove ${esc(p.student)} from roster">Remove</button></div>`).join('')||'<p>No students yet. Add a student to begin.</p>'}</div></section>`}
+function adviserAddStudent(){$('adviser-menu').hidden=true;saveActiveStudent();const a=activeAdvisor(),id=uid();a.activeStudentId=id;s=blankStudentPlan();a.students[id]=copyPlan(s);resetStudentUI();workflowGo('setup');saveActiveStudent()}
+function adviserRoster(){$('adviser-menu').hidden=true;workflowTab='roster';triClosePopover();render()}
+function adviserRosterHTML(){const a=activeAdvisor(),students=Object.entries(a.students).filter(([,p])=>p.student!=='New student'||p.auditParse||p.courses.length);return `<section class="flow-page roster-page"><div class="flow-title"><div><h2>Adviser roster</h2><p>${esc(a.name)}</p></div><button onclick="adviserAddStudent()">+ Add student</button></div><details class="secondarysettings"><summary>Settings &amp; backups</summary><label for="roster-advisor">Adviser profile</label><select id="roster-advisor" onchange="switchAdvisor(this.value)">${Object.entries(ADVISOR_NAMES).map(([id,name])=>`<option value="${id}" ${id===advisorWorkspace.activeAdvisor?'selected':''}>${esc(name)}</option>`).join('')}</select><button onclick="openImport()">Restore plan / backup</button><button onclick="backupProfiles()">Back up all students</button></details><div class="roster-list">${students.map(([id,p])=>`<div class="roster-entry"><button onclick="adviserOpenStudent('${id}')"><b>${esc(p.student)}</b><span>${esc((p.programDeclarations||[]).map(d=>d.name).join(' · ')||(p.programs||[]).map(k=>PROGRAMS[k]?.name||k).join(' · '))}</span><small>${esc(p.graduation||'')} ›</small></button><button class="roster-remove" onclick="adviserRemoveStudent('${id}')" aria-label="Remove ${esc(p.student)} from roster">Remove</button></div>`).join('')||'<p>No students yet. Add a student to begin.</p>'}</div></section>`}
 function adviserOpenStudent(id){switchStudent(id);workflowGo('path')}
-const accessSwitchAdvisor=switchAdvisor;switchAdvisor=function(id){if(loggedAdvisor&&id!==loggedAdvisor)return;accessSwitchAdvisor(id)};
-const accessBaseRender=renderAdvising;renderAdvising=function(){if(workflowTab==='roster'){$('advisingworkspace').hidden=false;$('advisingworkspace').innerHTML=adviserRosterHTML();document.querySelectorAll('[data-workflow]').forEach(el=>el.setAttribute('aria-selected','false'));return}accessBaseRender();if(workflowTab==='setup'){const profile=$('setup-advisor');if(profile){profile.value=loggedAdvisor||advisorWorkspace.activeAdvisor;profile.disabled=true}const details=document.querySelector('.flow-import details');if(details&&loggedAdvisor){const label=details.querySelector('label');if(label)label.textContent='Signed in as '+ADVISOR_NAMES[loggedAdvisor]}}};
+const accessBaseRender=renderAdvising;renderAdvising=function(){if(workflowTab==='roster'){$('advisingworkspace').hidden=false;$('advisingworkspace').innerHTML=adviserRosterHTML();document.querySelectorAll('[data-workflow]').forEach(el=>el.setAttribute('aria-selected','false'));return}accessBaseRender();};
 function planCurrentSemester(){const d=new Date(),m=d.getMonth();return (m<=4?'Spring':m<=6?'Summer':'Fall')+' '+d.getFullYear()}
 function planHistoryRecords(){return fullPlanRecords().filter(r=>r.semester&&termValue(r.semester)!==null&&termValue(r.semester)<termValue(s.startTerm))}
 function planHistoryBox(name){const records=planHistoryRecords().filter(c=>c.semester===name);return `<section class="tri-semester history-semester ${name===planCurrentSemester()?'current-semester':''}"><div class="tri-term-head"><b>${esc(name)}${name===planCurrentSemester()?'<i class="current-label">Current</i>':''}</b><span>${records.reduce((n,c)=>n+Number(c.cr),0)} cr.</span></div><div class="history-courses">${records.map(c=>`<button onclick="openHistoryCourse('${esc(c.code)}','${esc(name)}')" title="${esc(c.title)}"><b>${esc(c.code||c.title)}</b><small>${c.state==='Completed'?'✔':c.state==='In progress'?'In progress':esc(c.state)}</small></button>`).join('')}<button class="history-add" onclick="openHistoryCourse('','${esc(name)}')">+ Add course</button></div></section>`}
