@@ -2,16 +2,31 @@ const LOCAL_WORKSPACE_KEY='shc-advisor-workspace-v1';
 const ADVISOR_NAMES={purbi:'Purbi Adhya',priyojit:'Priyojit Palit'};
 function copyPlan(plan){return JSON.parse(JSON.stringify(plan))}
 function blankStudentPlan(){return {student:'New student',completed:[],inProgress:[],auditCourses:[],programs:[],terms:[{id:'spring-2027',name:'Spring 2027'},{id:'fall-2027',name:'Fall 2027'},{id:'spring-2028',name:'Spring 2028'}],courses:[],startTerm:'Spring 2027',collegeStartTerm:'Fall '+new Date().getFullYear(),collegeStartAssumed:true,graduationManual:false,graduation:fourYearGraduation('Fall '+new Date().getFullYear()),bulletinVersion:'2026-2027'}}
-function makeLocalWorkspace(legacy){const w={schemaVersion:1,activeAdvisor:'purbi',advisors:{}};for(const [id,name] of Object.entries(ADVISOR_NAMES)){const studentId=uid();w.advisors[id]={id,name,activeStudentId:studentId,students:{[studentId]:id==='purbi'&&legacy?legacy:blankStudentPlan()}}}return w}
-function loadLocalWorkspace(){try{const saved=JSON.parse(localStorage.getItem(LOCAL_WORKSPACE_KEY));if(saved?.schemaVersion===1&&saved.advisors?.purbi&&saved.advisors?.priyojit&&ADVISOR_NAMES[saved.activeAdvisor])return saved}catch{}let legacy=null;try{const p=JSON.parse(localStorage.getItem('shc-plan-v1'));if(p&&typeof p.student==='string'&&Array.isArray(p.courses)&&Array.isArray(p.completed))legacy=p}catch{}return makeLocalWorkspace(legacy)}
+function isEmptyStudentPlaceholder(p){return p.student==='New student'&&!p.studentDraft&&!p.auditParse&&!p.courses?.length&&!p.completed?.length&&!p.inProgress?.length&&!p.programs?.length}
+function normalizeStudentRoster(w){
+ for(const a of Object.values(w.advisors)){
+  for(const [id,p] of Object.entries(a.students))if(isEmptyStudentPlaceholder(p))delete a.students[id];
+  if(!a.students[a.activeStudentId])a.activeStudentId=Object.keys(a.students)[0]||null;
+ }
+ return w;
+}
+function makeLocalWorkspace(legacy){
+ const w={schemaVersion:1,activeAdvisor:'purbi',advisors:{}};
+ for(const [id,name] of Object.entries(ADVISOR_NAMES)){
+  const studentId=id==='purbi'&&legacy&&!isEmptyStudentPlaceholder(legacy)?uid():null;
+  w.advisors[id]={id,name,activeStudentId:studentId,students:studentId?{[studentId]:legacy}:{}};
+ }
+ return w;
+}
+function loadLocalWorkspace(){try{const saved=JSON.parse(localStorage.getItem(LOCAL_WORKSPACE_KEY));if(saved?.schemaVersion===1&&saved.advisors?.purbi&&saved.advisors?.priyojit&&ADVISOR_NAMES[saved.activeAdvisor])return normalizeStudentRoster(saved)}catch{}let legacy=null;try{const p=JSON.parse(localStorage.getItem('shc-plan-v1'));if(p&&typeof p.student==='string'&&Array.isArray(p.courses)&&Array.isArray(p.completed))legacy=p}catch{}return makeLocalWorkspace(legacy)}
 function activeAdvisor(){return advisorWorkspace.advisors[advisorWorkspace.activeAdvisor]}
 function activeStudentPlan(){const a=activeAdvisor();return a.students[a.activeStudentId]||Object.values(a.students)[0]||blankStudentPlan()}
-function saveActiveStudent(){const a=activeAdvisor();if(!a.activeStudentId)a.activeStudentId=uid();a.students[a.activeStudentId]=copyPlan(s);try{localStorage.setItem(LOCAL_WORKSPACE_KEY,JSON.stringify(advisorWorkspace));return true}catch{$('status').textContent='This browser could not save the plan. Download a backup before closing.';return false}}
+function saveActiveStudent(){const a=activeAdvisor();if(a.activeStudentId)a.students[a.activeStudentId]=copyPlan(s);try{localStorage.setItem(LOCAL_WORKSPACE_KEY,JSON.stringify(advisorWorkspace));return true}catch{$('status').textContent='This browser could not save the plan. Download a backup before closing.';return false}}
 function renderWorkspaceControls(){$('auditsource').hidden=!s.auditParse;const issues=s.auditParse?.warnings?.length||0;$('auditsource').textContent=issues?'Review audit · '+issues:'View audit';$('advisorprofile').value=advisorWorkspace.activeAdvisor;const a=activeAdvisor();$('studentlist').innerHTML=Object.entries(a.students).map(([id,p])=>`<option value="${esc(id)}">${esc(p.student||'New student')}</option>`).join('')+'<option value="__new__">+ New student</option>';$('studentlist').value=a.activeStudentId}
 function switchAdvisor(id){if(!ADVISOR_NAMES[id])return;if(!saveActiveStudent())return;advisorWorkspace.activeAdvisor=id;s=copyPlan(activeStudentPlan());resetStudentUI();persist()}
 function switchStudent(id){if(id==='__new__'){openNewPlanChoice();return}if(!activeAdvisor().students[id])return;if(!saveActiveStudent())return;activeAdvisor().activeStudentId=id;s=copyPlan(activeStudentPlan());resetStudentUI();persist()}
 function resetStudentUI(){for(const id of ['traysearch','raw'])if($(id))$(id).value='';for(const id of ['review','importstatus','status'])if($(id))$(id).replaceChildren();for(const id of ['showcompleted','showallcourses'])if($(id))$(id).checked=false}
-function newStudentPlan(){if(!saveActiveStudent())return;const a=activeAdvisor(),id=uid();a.activeStudentId=id;s=blankStudentPlan();a.students[id]=copyPlan(s);resetStudentUI();persist();$('kind').value='audit';openImport()}
+function newStudentPlan(){adviserAddStudent()}
 function adoptImportedPlan(plan){saveActiveStudent();const a=activeAdvisor();const same=Object.entries(a.students).find(([,p])=>p.student?.trim().toLowerCase()===plan.student?.trim().toLowerCase()&&p.student!=='New student');const current=a.students[a.activeStudentId];const id=same?.[0]||(current?.student==='New student'&&!current.auditParse?a.activeStudentId:uid());a.activeStudentId=id;s=plan;a.students[id]=copyPlan(s);persist()}
 function backupProfiles(){saveActiveStudent();download('advisor-profiles-backup.json',JSON.stringify(advisorWorkspace,null,2),'application/json')}
 function validStudentPlan(p){const safe=id=>typeof id==='string'&&/^[A-Za-z0-9-]+$/.test(id);return p&&typeof p.student==='string'&&Array.isArray(p.completed)&&Array.isArray(p.courses)&&p.courses.length<3000&&Array.isArray(p.terms)&&p.terms.length<100&&p.terms.every(t=>safe(t.id)&&typeof t.name==='string')&&p.courses.every(c=>safe(c.id)&&safe(c.term)&&typeof c.code==='string'&&/^[A-Z]{2,4} \d{3}[A-Z]?$/.test(c.code)&&typeof c.title==='string'&&Number.isFinite(Number(c.cr))&&Number(c.cr)>=0&&Number(c.cr)<=30)}
