@@ -24,3 +24,9 @@ cat('SPA 101','Elementary Spanish I',3,'','','Bulletin lists SPA 101–102 joint
 cat('MTH 100','Intermediate Algebra',3,'','MTH 101','Does not satisfy core mathematics.');
 cat('MTH 101','Intermediate Algebra Recitation',0,'','MTH 100');
 cat('MTH 103','Contemporary Mathematics',3);
+
+// English core sequences. Source: 2026–2027 Bulletin, English course descriptions.
+cat('ENG 121','Composition I',3,'','','Placement by the English Placement Questionnaire. A grade of C- or above is required.');
+cat('ENG 123','Composition II (Writing with Research)',3,'ENG 121','','A grade of C- or above and successful completion of the research component are required.');
+cat('ENG 190','Honors Composition and Literature',3,'','','Honors standing required. Substitutes for ENG 121 in the college core.');
+cat('ENG 290','Honors Composition and Literature',3,'ENG 121/ENG 190','','Honors standing required. Substitutes for ENG 123 in the college core.');
