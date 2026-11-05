@@ -30,3 +30,9 @@ cat('ENG 121','Composition I',3,'','','Placement by the English Placement Questi
 cat('ENG 123','Composition II (Writing with Research)',3,'ENG 121','','A grade of C- or above and successful completion of the research component are required.');
 cat('ENG 190','Honors Composition and Literature',3,'','','Honors standing required. Substitutes for ENG 121 in the college core.');
 cat('ENG 290','Honors Composition and Literature',3,'ENG 121/ENG 190','','Honors standing required. Substitutes for ENG 123 in the college core.');
+
+// Verified against the 2026–2027 Bulletin, Writing course descriptions.
+cat('WRI 301','Creative Writing: Fiction and Nonfiction',3,'ENG 2XX','','Requires a 200-level English course. Repeatable for credit.');
+cat('WRI 302','Creative Writing: Poetry',3,'ENG 2XX','','Requires a 200-level English course. Repeatable for credit.');
+cat('WRI 453','Creative Writing: Non-fiction',3,'ENG 2XX','','Requires a 200-level English course. Repeatable for credit.');
+cat('WRI 492','Playwriting',3,'ENG 121/ENG 190,ENG 123/ENG 290,ENG 2XX','','Prerequisite: English core requirements. Cross-listed as THR 492.');
