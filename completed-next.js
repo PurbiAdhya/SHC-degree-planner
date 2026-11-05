@@ -16,7 +16,7 @@ function dropCompletedCourse(payload){
  const planned=payload.id?s.courses.find(c=>c.id===payload.id):null;
  const choice=payload.code?triCourseCatalog().find(c=>c.code===payload.code):null;
  const requirement=choice&&triGroups().find(g=>g.key===payload.key);
- if(!planned&&(!requirement||!triEligible(requirement,choice)))return false;
+ if(!planned&&(!requirement||!(triIsExploration(requirement)?triExplorationChoices()(choice):triEligible(requirement,choice))))return false;
  const code=(planned||choice).code;
  if(s.completed.includes(code))return false;
  let course=planned||s.courses.find(c=>c.code===code);
@@ -68,4 +68,19 @@ function moveCompletedToSemester(code,term){
  move(course.id,term);
  triFeedback(code+' moved from Completed to the plan.');
  return true;
+}
+
+function removeCompletedCourse(code){
+ s.completed=s.completed.filter(value=>value!==code);
+ for(const row of s.auditParse?.courses||[]){
+  if(row.code===code&&row.status==='completed')row.status='needed';
+ }
+ for(const group of s.auditParse?.requirements||[]){
+  if(group.status!=='completed'||group.advisorReviewed||![...(group.records||[]),...(group.codes||[])].includes(code))continue;
+  const evidence=new Set([...(group.records||[]),...(group.codes||[])]);
+  const stillCompleted=s.completed.filter(value=>evidence.has(value)).length;
+  if(stillCompleted<(group.count||1))group.status='needed';
+ }
+ persist();
+ triFeedback(code+' removed from Completed.');
 }
