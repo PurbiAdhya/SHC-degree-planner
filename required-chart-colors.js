@@ -35,19 +35,15 @@ workflowSemesterBox=function(t){
   const sections=[...new Set(roles.map(r=>r.section))];
   const label=roles.map(r=>r.section+(r.elective?' · elective':' · required')).join('; ')||'Free elective';
   const multi=sections.length>1;
-  const stops=sections.flatMap((section,i)=>{
-   const color=colors.get(section)||'#778292';
-   return [color+' '+(i/sections.length*100)+'%',color+' '+((i+1)/sections.length*100)+'%'];
-  }).join(',');
   const elective=roles.some(r=>r.elective)||!roles.length;
-  const core=roles.some(role=>role.section==='Core');
-  const name=`<span class="course-role-name ${core?'course-role-core':''} ${multi?'course-role-multiple':''}" style="color:${color};${multi?'--course-role-colors:linear-gradient(to right,'+stops+');':''}" title="${esc(label)}">${esc(c.code)}</span>${elective?'<b class="elective-course-mark">E</b>':''}`;
+  const dots=multi?`<span class="requirement-course-badges" title="${esc(label)}">${sections.map(section=>`<i class="requirement-role-dot" style="background:${colors.get(section)||'#778292'}"></i>`).join('')}</span>`:'';
+  const name=`<span class="course-role-name" style="color:${color}" title="${esc(label)}">${esc(c.code)}</span>${dots}${elective?'<b class="elective-course-mark">E</b>':''}`;
   html=html.replace(`${esc(c.code)}<span class="review-signs">`,`${name}<span class="review-signs">`);
  }
  return html;
 };
 function requirementColorLegend(){
- return '<div class="requirement-color-legend" aria-label="Course colors">'+[...planRequirementColors()].map(([name,color])=>`<span style="color:${color}" class="${name==='Core'?'legend-core':''}">${esc(name)}</span>`).join('')+'<span><b class="elective-course-mark">E</b> Elective</span></div>';
+ return '<div class="requirement-color-legend" aria-label="Course colors">'+[...planRequirementColors()].map(([name,color])=>`<span style="color:${color}">${esc(name)}</span>`).join('')+'<span><b class="elective-course-mark">E</b> Elective</span></div>';
 }
 const requiredColoredPathBase=workflowPathPanelHTML;
 workflowPathPanelHTML=function(){return requiredColoredPathBase().replace('<div id="tri-feedback"',requirementColorLegend()+'<div id="tri-feedback"')};
